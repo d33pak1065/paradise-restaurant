@@ -1,0 +1,127 @@
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  gap: 12px;
+  background: linear-gradient(90deg, rgba(15,118,110,0.03), rgba(15,118,110,0.01));
+  border-bottom: 1px solid rgba(15,118,110,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+/* left side / brand */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f766e;
+  letter-spacing: 0.4px;
+}
+
+.tag {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* right side links */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* style for anchor links inside nav-right */
+.nav-right a {
+  text-decoration: none;
+  color: #374151;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background .12s ease, color .12s ease, transform .06s ease;
+}
+
+.nav-right a:hover,
+.nav-right a:focus {
+  background: rgba(15,118,110,0.06);
+  color: #0f766e;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* the "link styled button" used for logout */
+.btn-link {
+  background: transparent;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background .12s ease, color .12s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  background: rgba(255,107,107,0.06);
+  color: #ff6b6b;
+  outline: none;
+}
+
+/* small badge for cart or notifications (if added later) */
+.nav-badge {
+  background: #ff6b6b;
+  color: #fff;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* mobile responsiveness: collapse links into a simple stacked layout */
+@media (max-width: 720px) {
+  .nav {
+    padding: 10px 12px;
+  }
+
+  .nav-right {
+    gap: 6px;
+  }
+
+  .nav-right a,
+  .btn-link {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .logo { font-size: 18px; }
+}
+
+/* accessibility focus ring */
+.nav-right a:focus-visible,
+.btn-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.12);
+  border-radius: 8px;
+}
